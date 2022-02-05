@@ -1,6 +1,7 @@
 plugins {
-    id 'fabric-loom' version '0.10.+'
-    id 'io.github.juuxel.loom-quiltflower-mini' version '1.1.0'
+    id 'fabric-loom' version '0.10-SNAPSHOT'
+    // id 'io.github.juuxel.loom-quiltflower' version '1.6.0'
+    id 'io.github.juuxel.loom-quiltflower-mini' version '1.2.1'
     id 'java-library'
     id 'maven-publish'
     id 'com.github.johnrengelman.shadow' version '7.0.0'
@@ -27,7 +28,7 @@ version = "${project.mod_version}+${getMCVersionString()}"
 archivesBaseName = project.archives_base_name
 
 // This field defines the Java version your mod target.
-def targetJavaVersion = 16
+def targetJavaVersion = 17
 
 boolean isMCVersionNonRelease() {
     return project.minecraft_version.matches('^\\d\\dw\\d\\d[a-z]$')
@@ -83,7 +84,6 @@ dependencies {
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
 
     modImplementation include("dev.lambdaurora:spruceui:${project.spruceui_version}")
-    modImplementation include("io.github.queerbric:pridelib:${project.pridelib_version}")
 
     modImplementation("com.terraformersmc:modmenu:${project.modmenu_version}") {
         transitive = false
